@@ -3,6 +3,7 @@ package com.bridgelabz.mathoperations;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class NumberPlayList {
 	public static void main(String[] args) {
@@ -36,6 +37,11 @@ public class NumberPlayList {
 		//Implicit Lambda Function
 		numberList.forEach(number -> {
 			System.out.println("Implicit class: "+number);
+		});
+		
+		Function<Integer, Double> function = Integer::doubleValue;
+		numberList.forEach(number -> {
+			System.out.println("Double Value: "+function.apply(number));
 		});
 	}
 }
