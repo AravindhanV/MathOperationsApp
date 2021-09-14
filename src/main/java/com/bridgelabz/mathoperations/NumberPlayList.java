@@ -60,5 +60,8 @@ public class NumberPlayList {
 
 		Integer firstEven = numberList.stream().filter(predicate).findFirst().orElse(null);
 		System.out.println("First Even: "+firstEven);
+		
+		Integer min = numberList.stream().filter(predicate).min((n1,n2) -> n1-n2).orElse(null);
+		System.out.println("Min Value: "+min);
 	}
 }
