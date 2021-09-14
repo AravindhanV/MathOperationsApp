@@ -76,5 +76,7 @@ public class NumberPlayList {
 		
 		boolean allEven = numberList.parallelStream().allMatch(predicate);
 		System.out.println("All Even: "+allEven);
+		boolean oneEven = numberList.parallelStream().anyMatch(predicate);
+		System.out.println("One Even: "+oneEven);
 	}
 }
