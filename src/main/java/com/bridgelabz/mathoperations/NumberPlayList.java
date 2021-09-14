@@ -60,12 +60,18 @@ public class NumberPlayList {
 		System.out.println("Double List: " + doubleList);
 
 		Integer firstEven = numberList.stream().filter(predicate).findFirst().orElse(null);
-		System.out.println("First Even: "+firstEven);
+		System.out.println("First Even: " + firstEven);
+
+		Integer min = numberList.stream().filter(predicate).min((n1, n2) -> n1 - n2).orElse(null);
+		System.out.println("Min Value: " + min);
+
+		Integer max = numberList.parallelStream().filter(predicate).max((n1, n2) -> n1 - n2).orElse(null);
+		System.out.println("Max Value: " + max);
+
+		Integer sum = numberList.stream().reduce(0, (n1, n2) -> n1 + n2);
+		System.out.println("Sum: "+sum);
 		
-		Integer min = numberList.stream().filter(predicate).min((n1,n2) -> n1-n2).orElse(null);
-		System.out.println("Min Value: "+min);
-		
-		Integer max = numberList.parallelStream().filter(predicate).max((n1,n2) -> n1-n2).orElse(null);
-		System.out.println("Max Value: "+max);
+		Integer average = (int) (sum/(numberList.stream().count()));
+		System.out.println("Average: "+average);
 	}
 }
