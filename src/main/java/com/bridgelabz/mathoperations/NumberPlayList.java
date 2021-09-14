@@ -1,6 +1,7 @@
 package com.bridgelabz.mathoperations;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -63,5 +64,8 @@ public class NumberPlayList {
 		
 		Integer min = numberList.stream().filter(predicate).min((n1,n2) -> n1-n2).orElse(null);
 		System.out.println("Min Value: "+min);
+		
+		Integer max = numberList.parallelStream().filter(predicate).max((n1,n2) -> n1-n2).orElse(null);
+		System.out.println("Max Value: "+max);
 	}
 }
