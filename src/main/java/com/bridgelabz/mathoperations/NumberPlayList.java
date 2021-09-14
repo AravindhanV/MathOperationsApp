@@ -78,5 +78,8 @@ public class NumberPlayList {
 		System.out.println("All Even: "+allEven);
 		boolean oneEven = numberList.stream().anyMatch(predicate);
 		System.out.println("One Even: "+oneEven);
+		
+		List<Integer> sortedList = numberList.stream().sorted().collect(Collectors.toList());
+		System.out.println("Sorted: "+sortedList);
 	}
 }
