@@ -49,5 +49,9 @@ public class NumberPlayList {
 		numberList.forEach(number -> {
 			System.out.println(number+" is even number: "+predicate.test(number));
 		});
+		
+		numberList.stream().forEach(n -> {
+			System.out.println("Stream in forEach: "+n);
+		});
 	}
 }
