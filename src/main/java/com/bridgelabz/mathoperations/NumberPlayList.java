@@ -56,8 +56,11 @@ public class NumberPlayList {
 		});
 		
 		List<Double> doubleList = numberList.stream()
+				.filter(predicate)
 				.map(function)
 				.collect(Collectors.toList());
 		System.out.println("Double List: "+doubleList);
+		
+		
 	}
 }
