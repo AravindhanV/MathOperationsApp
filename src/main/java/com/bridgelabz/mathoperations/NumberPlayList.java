@@ -73,5 +73,8 @@ public class NumberPlayList {
 		
 		Integer average = (int) (sum/(numberList.stream().count()));
 		System.out.println("Average: "+average);
+		
+		boolean allEven = numberList.parallelStream().allMatch(predicate);
+		System.out.println("All Even: "+allEven);
 	}
 }
